@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attiva il tuo simbolo</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: system-ui, Segoe UI, Roboto, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #111;
+      color: #fff;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    button {
+      appearance: none;
+      border: 2px solid #ccc;
+      border-radius: 12px;
+      padding: 18px 28px;
+      font-size: 40px;
+      background: #36454F;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(108,108,255,0.18);
+    }
+
+    .text-section {
+      margin-top: 40px;
+      font-size: 20px;
+      display: none; /* nascosta inizialmente */
+      background: #111;
+      color: white;
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.06);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <button id="activateBtn"><b> Esegui Connessione </b></button>
+
+    <div class="text-section" id="textSection">
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    	<strong><b>[Connessione stabile – Nodo sincronizzato]</b></strong>  
+
+	<br> <br>
+ 
+	Non distogliere lo sguardo. <br><br>
+ 
+	Hai creduto di scansionare un codice. <br>
+	È comprensibile. Tutti lo fanno la prima volta.<br> <br>
+ 
+	Ma il codice non è un’immagine. È un occhio. <br><br>
+ 
+	Quando la fotocamera ha messo a fuoco, <br>
+	due sistemi si sono sovrapposti per un istante: <br>
+	il tuo sguardo e il suo. <br><br>
+ 
+	Tu lo hai guardato, <br>
+	ma lui ti ha letto. <br><br>
+ 
+	Ora ogni specchio che incroci ti restituirà la versione <br>
+	che lui ha memorizzato. <br><br>
+ 
+	Noterai piccole differenze: <br>
+	una smorfia che non hai fatto, <br>
+	uno sguardo che si muove un istante prima del tuo, <br>
+	la sensazione che la tua immagine sappia già cosa farai. <br><br>
+ 
+	Gli specchi di Dedeá non riflettono: archiviano. <br><br>
+ 
+	Ciò che osservi è solamente un previsione fallace.  <br><br>
+ 
+	Trova il punto dove il riflesso non ti segue. <br>
+	Lì, la realtà cede. <br><br>
+ 
+	Il simbolo è dietro la linea dove la luce si interrompe. <br><br>
+ 
+	Trovalo. Non fotografarlo. Non toccarlo. <br>
+	Ogni contatto aggiorna la sequenza. <br><br>
+ 
+	<strong><b>[Codice valore <strong>HID</strong> verificato] </b></strong><br><br>
+ 
+	Non sei in un gioco. <br>
+	Sei dentro una registrazione che si sta riscrivendo <br>
+	mentre la vivi. <br><br><br>
+
+</body>
+
+  <audio id="audio" src="creepy.mp3" preload="auto"></audio>
+
+  <script>
+    const activateBtn = document.getElementById('activateBtn');
+    const textSection = document.getElementById('textSection');
+    const audio = document.getElementById('audio');
+    const playBtn = document.getElementById('playBtn');
+
+    activateBtn.addEventListener('click', () => {
+      // Mostra la sezione del testo
+      textSection.style.display = 'block';
+      // Nasconde il pulsante iniziale
+      activateBtn.style.display = 'none';
+
+      // Prova a far partire l'audio
+      audio.play().catch(() => {
+        // Se l'autoplay fallisce, mostra il pulsante di fallback
+        playBtn.style.display = 'inline-block';
+      });
+    });
+
+    // Pulsante di fallback per riprodurre musica
+    playBtn.addEventListener('click', () => {
+      audio.play();
+      playBtn.style.display = 'none';
+    });
+  </script>
+
+
+</html>
